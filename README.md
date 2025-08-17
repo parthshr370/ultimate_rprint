@@ -6,6 +6,19 @@ A universal terminal display library for Python that transforms basic print stat
 
 The Ultimate Rich Print Helper provides pre-configured functions that replace messy terminal formatting code with clean, semantic function calls. Instead of manually formatting colors, JSON, tables, and progress indicators, you get beautiful output with single-parameter functions.
 
+# Comparison
+
+Before 
+
+
+![bef](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon.png)
+
+After
+
+
+![after](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/new%20carbon.png)
+
+
 ## Installation
 
 1. Copy `ultimate_rprint.py` to your project
@@ -167,6 +180,12 @@ ultimate_rprint/
 ├── before_after_comparison.py  # Visual comparison demo
 └── README.md                   # This documentation
 ```
+
+## Output 
+
+![aa](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/Screenshot_20250817_214914.png)
+
+
 
 ## Testing
 
