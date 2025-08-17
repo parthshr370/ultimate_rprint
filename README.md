@@ -6,23 +6,6 @@ A universal terminal display library for Python that transforms basic print stat
 
 The Ultimate Rich Print Helper provides pre-configured functions that replace messy terminal formatting code with clean, semantic function calls. Instead of manually formatting colors, JSON, tables, and progress indicators, you get beautiful output with single-parameter functions.
 
-
-## Comparison
-
-Before
-
-![old](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon.png)
-
-
-
-After
-
-
-![new](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon(1).png)
-
-
-
-
 ## Installation
 
 1. Copy `ultimate_rprint.py` to your project
@@ -35,26 +18,26 @@ After
 from ultimate_rprint import *
 
 # Basic messages
-info("Starting application...")
-success("Database connected successfully")
-warning("Configuration file not found")
-error("Failed to authenticate user")
+display_info("Starting application...")
+display_success("Database connected successfully")
+display_warning("Configuration file not found")
+display_error("Failed to authenticate user")
 
 # Complex data display
 data = {"users": 150, "active": 89, "status": "running"}
-json_display(data, "System Status")
+display_json(data, "System Status")
 
 # Table from list of dictionaries
 users = [
     {"name": "Alice", "role": "admin", "last_login": "2024-01-15"},
     {"name": "Bob", "role": "user", "last_login": "2024-01-14"}
 ]
-table_display(users, "Active Users")
+display_table(users, "Active Users")
 
 # User interaction
-if ask_yes_no("Continue with installation?"):
-    progress_msg("Installing components...")
-    success("Installation completed")
+if display_ask_yes_no("Continue with installation?"):
+    display_progress_msg("Installing components...")
+    display_success("Installation completed")
 ```
 
 ## Function Categories
@@ -62,44 +45,44 @@ if ask_yes_no("Continue with installation?"):
 ### Basic Messages
 | Function | Purpose | Example |
 |----------|---------|---------|
-| `info(msg)` | Information messages | `info("Processing started")` |
-| `success(msg)` | Success notifications | `success("File saved successfully")` |
-| `warning(msg)` | Warning alerts | `warning("Disk space low")` |
-| `error(msg)` | Error messages | `error("Connection failed")` |
-| `debug(msg)` | Debug information | `debug("Variable value: 42")` |
+| `display_info(msg)` | Information messages | `display_info("Processing started")` |
+| `display_success(msg)` | Success notifications | `display_success("File saved successfully")` |
+| `display_warning(msg)` | Warning alerts | `display_warning("Disk space low")` |
+| `display_error(msg)` | Error messages | `display_error("Connection failed")` |
+| `display_debug(msg)` | Debug information | `display_debug("Variable value: 42")` |
 
 ### Data Display
 | Function | Purpose | Input Type |
 |----------|---------|------------|
-| `json_display(data, title)` | JSON with syntax highlighting | dict, list, or JSON string |
-| `table_display(data, title)` | Formatted table | list of dictionaries |
-| `tree_display(data, title)` | Hierarchical tree | dict with list values |
-| `key_value_display(data, title)` | Key-value pairs | dictionary |
-| `list_display(items, title)` | Formatted list | list of strings |
+| `display_json(data, title)` | JSON with syntax highlighting | dict, list, or JSON string |
+| `display_table(data, title)` | Formatted table | list of dictionaries |
+| `display_tree(data, title)` | Hierarchical tree | dict with list values |
+| `display_key_value(data, title)` | Key-value pairs | dictionary |
+| `display_list(items, title)` | Formatted list | list of strings |
 
 ### Progress & Status
 | Function | Purpose | Parameters |
 |----------|---------|------------|
-| `operation_start(name)` | Start operation | operation name |
-| `operation_complete(name, result)` | Complete operation | operation name, result path |
-| `step_progress(current, total, desc)` | Step counter | current, total, description |
-| `progress_msg(msg)` | Progress message | progress description |
-| `status_update(msg, count)` | Status with count | message, optional count |
+| `display_operation_start(name)` | Start operation | operation name |
+| `display_operation_complete(name, result)` | Complete operation | operation name, result path |
+| `display_step_progress(current, total, desc)` | Step counter | current, total, description |
+| `display_progress_msg(msg)` | Progress message | progress description |
+| `display_status_update(msg, count)` | Status with count | message, optional count |
 
 ### User Interaction
 | Function | Purpose | Return Type |
 |----------|---------|-------------|
-| `ask_question(prompt)` | Text input | string |
-| `ask_yes_no(prompt)` | Yes/no question | boolean |
-| `ask_choice(prompt, options)` | Multiple choice | selected option |
+| `display_ask(prompt)` | Text input | string |
+| `display_ask_yes_no(prompt)` | Yes/no question | boolean |
+| `display_ask_choice(prompt, options)` | Multiple choice | selected option |
 
 ### Layout & Structure
 | Function | Purpose | Parameters |
 |----------|---------|------------|
-| `divider(title)` | Section separator | optional title |
-| `header(text)` | Section header | header text |
-| `section_panel(title, content)` | Content in panel | title, content |
-| `side_by_side(left, right, left_title, right_title)` | Two-column layout | content and titles |
+| `display_divider(title)` | Section separator | optional title |
+| `display_header(text)` | Section header | header text |
+| `display_section_panel(title, content)` | Content in panel | title, content |
+| `display_side_by_side(left, right, left_title, right_title)` | Two-column layout | content and titles |
 
 ## Code Transformation Examples
 
@@ -125,13 +108,13 @@ if response in ['y', 'yes']:
 from ultimate_rprint import *
 
 # Clean and semantic
-info("Starting database analysis...")
-success(f"Loaded records successfully", count)
-json_display(config_data, "Configuration")
+display_info("Starting database analysis...")
+display_status_update("Loaded records successfully", count)
+display_json(config_data, "Configuration")
 
 # Rich interactive prompts
-if ask_yes_no("Continue?"):
-    progress_msg("Proceeding...")
+if display_ask_yes_no("Continue?"):
+    display_progress_msg("Proceeding...")
 ```
 
 ## Benefits
@@ -170,7 +153,7 @@ print_blue("Information")
 ### Context Managers
 ```python
 # Spinner for long operations
-with spinner_status("Processing data"):
+with display_spinner("Processing data"):
     # Long running operation
     time.sleep(5)
 ```
@@ -180,20 +163,16 @@ with spinner_status("Processing data"):
 ```
 ultimate_rprint/
 ├── ultimate_rprint.py          # Main library file
-├── test_rprint_helper.py       # Comprehensive test suite
+├── test_display_helper.py      # Comprehensive test suite
 ├── before_after_comparison.py  # Visual comparison demo
 └── README.md                   # This documentation
 ```
-
-## Output 
-
-![out](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/Screenshot_20250817_214914.png)
 
 ## Testing
 
 Run the test suite to see all functions in action:
 ```bash
-python test_rprint_helper.py
+python test_display_helper.py
 ```
 
 Run the comparison demo to see before/after differences:

@@ -81,35 +81,35 @@ def old_messy_way():
 def new_clean_way():
     """How the code looks AFTER using ultimate_rprint helper"""
     
-    rprint_divider("NEW WAY - Clean, Semantic, Easy to Maintain")
+    display_divider("NEW WAY - Clean, Semantic, Easy to Maintain")
     
     # Basic messages - semantic and clear
-    rprint_info("Starting research pipeline...")
-    rprint_success("Database loaded successfully")
-    rprint_warning("Some data might be incomplete") 
-    rprint_error("Failed to connect to API")
+    display_info("Starting research pipeline...")
+    display_success("Database loaded successfully")
+    display_warning("Some data might be incomplete") 
+    display_error("Failed to connect to API")
     
     # Progress tracking - single function calls
     for i in range(3):
-        rprint_progress_msg(f"Processing step {i+1}/3...")
+        display_progress_msg(f"Processing step {i+1}/3...")
     
     # JSON data - beautiful automatic formatting
     data = {"total_records": 67, "primary_topics": ["diabetes", "medication"], "status": "active"}
-    rprint_json(data, "Database Metadata")
+    display_json(data, "Database Metadata")
     
     # Error handling - consistent semantic functions
-    rprint_error("Memory extraction failed: Invalid JSON response")
-    rprint_warning("Could not inject memory context")
+    display_error("Memory extraction failed: Invalid JSON response")
+    display_warning("Could not inject memory context")
     
     # Phase transitions - clean operation tracking
-    rprint_operation_start("Phase 2: Strategic Planning")
-    rprint_operation_complete("Strategic Planning", "artifacts/20250817_plan.json")
+    display_operation_start("Phase 2: Strategic Planning")
+    display_operation_complete("Strategic Planning", "artifacts/20250817_plan.json")
     
     # User input - rich interactive prompts
-    if rprint_ask_yes_no("Do you want to continue?"):
-        rprint_progress_msg("Proceeding with analysis...")
+    if display_ask_yes_no("Do you want to continue?"):
+        display_progress_msg("Proceeding with analysis...")
     else:
-        rprint_info("Skipping analysis phase")
+        display_info("Skipping analysis phase")
     
     # Memory connections - automatic table formatting
     connection_data = [
@@ -117,8 +117,8 @@ def new_clean_way():
         {"patient": "Marcus Chen", "score": "0.820", "preview": "Marcus manages insulin with glucose monitoring..."}
     ]
     
-    rprint_header("Memory Connections Discovered")
-    rprint_table(connection_data, "Memory Connections", max_rows=10)
+    display_header("Memory Connections Discovered")
+    display_table(connection_data, "Memory Connections", max_rows=10)
 
 
 # ============================================================================
@@ -128,9 +128,7 @@ def new_clean_way():
 def show_code_complexity_comparison():
     """Show the actual code complexity difference"""
     
-    from ultimate_rprint import *
-    
-    rprint_divider("CODE COMPLEXITY COMPARISON")
+    display_divider("CODE COMPLEXITY COMPARISON")
     
     old_code = '''# OLD WAY - 15 lines for basic pipeline status
 rprint("\\n" + "="*60) 
@@ -165,7 +163,7 @@ error("Error occurred") if error_occurred else success("Operation successful")
 # JSON display
 json_display(config_data, "Configuration")'''
 
-    rprint_side_by_side(old_code, new_code, "BEFORE (Verbose)", "AFTER (Clean)")
+    display_side_by_side(old_code, new_code, "BEFORE (Verbose)", "AFTER (Clean)")
     
     # Show metrics
     metrics = {
@@ -177,7 +175,7 @@ json_display(config_data, "Configuration")'''
         "maintainability": "Difficult → Easy"
     }
     
-    rprint_key_value(metrics, "Improvement Metrics")
+    display_key_value(metrics, "Improvement Metrics")
 
 
 # ============================================================================
@@ -187,9 +185,7 @@ json_display(config_data, "Configuration")'''
 def show_real_pipeline_examples():
     """Show real examples from the actual codebase transformation"""
     
-    from ultimate_rprint import *
-    
-    rprint_divider("REAL PIPELINE CODE TRANSFORMATION")
+    display_divider("REAL PIPELINE CODE TRANSFORMATION")
     
     # Example 1: Main pipeline execution
     old_main = '''# OLD main.py - Verbose and inconsistent
@@ -229,7 +225,7 @@ if ask_yes_no("Store key insights as memories for future research?"):
 else:
     info("Skipping memory storage")'''
     
-    rprint_side_by_side(old_main, new_main, "OLD main.py (Messy)", "NEW main.py (Clean)")
+    display_side_by_side(old_main, new_main, "OLD main.py (Messy)", "NEW main.py (Clean)")
     
     # Example 2: Strategic agent memory connections
     old_agent = '''# OLD strategic_react_agent.py - Manual formatting nightmare
@@ -260,7 +256,7 @@ for result in results:
 
 table_display(connection_data, "Memory Connections", max_rows=5)'''
     
-    rprint_side_by_side(old_agent, new_agent, "OLD agent.py (Complex)", "NEW agent.py (Smart)")
+    display_side_by_side(old_agent, new_agent, "OLD agent.py (Complex)", "NEW agent.py (Smart)")
 
 
 # ============================================================================
@@ -270,9 +266,7 @@ table_display(connection_data, "Memory Connections", max_rows=5)'''
 def show_benefits_summary():
     """Show the concrete benefits of the transformation"""
     
-    from ultimate_rprint import *
-    
-    rprint_divider("TRANSFORMATION BENEFITS")
+    display_divider("TRANSFORMATION BENEFITS")
     
     benefits = [
         "🎯 **Semantic Clarity**: Functions named by purpose (info, success, error) not appearance",
@@ -285,19 +279,19 @@ def show_benefits_summary():
         "📈 **Enhanced UX**: Interactive prompts, progress bars, rich displays"
     ]
     
-    rprint_list(benefits, "Key Benefits", numbered=False)
+    display_list(benefits, "Key Benefits", numbered=False)
     
     # Show adoption metrics
     adoption_stats = {
         "files_updated": "6 core files transformed",
-        "rprint_calls_replaced": "50+ manual rprint statements", 
+        "display_calls_replaced": "50+ manual rprint statements", 
         "code_reduction": "~300 lines → ~100 lines (67% reduction)",
         "color_codes_eliminated": "All hardcoded color strings removed",
         "new_display_types": "JSON, tables, trees, panels, prompts",
         "maintainability": "Single source of truth for all terminal styling"
     }
     
-    rprint_key_value(adoption_stats, "Codebase Transformation Stats")
+    display_key_value(adoption_stats, "Codebase Transformation Stats")
 
 
 # ============================================================================
@@ -315,7 +309,7 @@ if __name__ == "__main__":
     sys.path.append(os.path.dirname(__file__))
     
     try:
-        rprint_welcome_banner()
+        display_welcome_banner()
         print("\n")
         
         # Run all demonstrations
@@ -329,7 +323,7 @@ if __name__ == "__main__":
         print("\n" + "="*80 + "\n")
         show_benefits_summary()
         
-        rprint_completion_panel("Visual comparison complete! The difference is night and day!")
+        display_completion_panel("Visual comparison complete! The difference is night and day!")
         
     except ImportError:
         print("Note: Run 'pip install rich' to see the enhanced output")
