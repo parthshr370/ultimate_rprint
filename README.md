@@ -11,10 +11,14 @@ The Ultimate Rich Print Helper provides pre-configured functions that replace me
 
 Before
 
-[old](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon.png)
+![old](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon.png)
+
+
 
 After
-[new](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon(1).png)
+
+
+![new](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/carbon(1).png)
 
 
 
@@ -183,7 +187,7 @@ ultimate_rprint/
 
 ## Output 
 
-[out](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/Screenshot_20250817_214914.png)
+![out](https://github.com/parthshr370/ultimate_rprint/blob/main/outputs/Screenshot_20250817_214914.png)
 
 ## Testing
 
